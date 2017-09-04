@@ -10,5 +10,6 @@ package roundone;
  * @author zjx5013
  */
 public class MenuController {
-    
+    MenuView theMenuView =new MenuView();
+   
 }

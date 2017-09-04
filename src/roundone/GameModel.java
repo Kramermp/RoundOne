@@ -10,5 +10,10 @@ package roundone;
  * @author zjx5013
  */
 public class GameModel {
+    private String userName;
+    private int score;
+    private int rank;
+    
+            
     
 }

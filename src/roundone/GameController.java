@@ -10,5 +10,5 @@ package roundone;
  * @author zjx5013
  */
 public class GameController {
-    
+    GameView theGameView=new GameView();
 }
