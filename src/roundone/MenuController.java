@@ -10,6 +10,9 @@ package roundone;
  * @author zjx5013
  */
 public class MenuController {
-    MenuView theMenuView =new MenuView();
-   
+    MenuView theMenuView = new MenuView();
+    
+    public MenuController() {
+        this.theMenuView.setVisible(true);
+    }
 }

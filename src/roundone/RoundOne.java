@@ -14,7 +14,7 @@ public class RoundOne {
     }
     public static void main(String[] args) {
         // TODO code application logic here
-        MenuController theMenuController =new MenuController();
+        MenuController theMenuController = new MenuController();
 
         
     }

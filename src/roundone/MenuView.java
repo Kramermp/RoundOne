@@ -5,11 +5,13 @@
  */
 package roundone;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author zjx5013
  */
-public class MenuView extends javax.swing.JFrame {
+public class MenuView extends JFrame {
     
 
 
@@ -18,6 +20,7 @@ public class MenuView extends javax.swing.JFrame {
      */
     public MenuView() {
         initComponents();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     /**
