@@ -5,19 +5,55 @@
  */
 package roundone;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.util.Random;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author zjx5013
  */
 public class GameView extends javax.swing.JFrame {
-
+    GameController parentController;
+    NumberPanel[][] theNumberPanelArray;
     /**
      * Creates new form MainMenuUI
      */
-    public GameView() {
+    public GameView(GameController parentController, NumberPanel[][] theNumberPanelArray) {
+        this.parentController = parentController;
+        this.theNumberPanelArray = theNumberPanelArray;
         initComponents();
+        buildNumberPanels();
+        this.addKeyListener(new GameListener(this.parentController));
     }
-
+    
+    private void buildNumberPanels() {  
+        int Low = 1;
+        int High = 100;        
+        Random rng = new Random();
+        
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill=GridBagConstraints.BOTH;
+        c.weightx=1;
+        c.weighty=1;
+        setLayout(new GridBagLayout());
+        for(int i =0; i < 7; i++) {
+            for(int j = 0; j < 7; j++) {
+                c.gridx = i;
+                c.gridy = j;
+                NumberPanel selectedNumberPanel = new NumberPanel(rng.nextInt(High - Low) + Low);
+                theNumberPanelArray[i][j] = selectedNumberPanel;
+                add(selectedNumberPanel, c);
+            }
+        }
+    }
+   
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,40 +82,8 @@ public class GameView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GameView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GameView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GameView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GameView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GameView().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

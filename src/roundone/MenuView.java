@@ -92,7 +92,8 @@ public class MenuView extends JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         // TODO add your handling code here:
-        System.out.println(this.getUsername());
+        GameController theGameView=new GameController();
+        //theGameView.setVisible(true);
     }//GEN-LAST:event_startButtonActionPerformed
     public String getUsername(){
     String username=this.nameField.getText();
@@ -139,4 +140,8 @@ public class MenuView extends JFrame {
     private javax.swing.JLabel nameLabel;
     private javax.swing.JButton startButton;
     // End of variables declaration//GEN-END:variables
+
+    void populateLeaderboard(Score[] highScores) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
