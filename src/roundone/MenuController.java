@@ -24,6 +24,10 @@ public class MenuController {
         this.theMenuView.setVisible(true);
     }
     
+    public void setName(String username) {
+        theMenuModel.setName(username);
+    } 
+    
     private class ExitListener implements ActionListener {
 
         @Override
@@ -31,6 +35,11 @@ public class MenuController {
             System.err.println("This is a stub.");
         }
         
+    }
+    
+    public void exitGame() {
+        //SaveData
+        System.exit(0);
     }
     
     private class StartListener implements ActionListener{
@@ -41,5 +50,9 @@ public class MenuController {
             //TODO initialize game
         }
         
+    }
+    
+    public void startGame() {
+        new GameController();
     }
 }
