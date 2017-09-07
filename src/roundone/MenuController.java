@@ -21,16 +21,8 @@ public class MenuController {
     public MenuController() {
         theMenuView = new MenuView();
         theMenuModel = new MenuModel();
+        this.theMenuView.populateLeaderboard(theMenuModel.getHighScores());
         this.theMenuView.setVisible(true);
-    }
-    
-    //Hashmaps require Reference Types need to modify the score hashmap to store
-    public Score[] getScores() {
-        return theMenuModel.getHighScores();
-    }
-    
-    public void displayScores(HashMap<String, Integer> highScores) {
-        
     }
     
     private class ExitListener implements ActionListener {

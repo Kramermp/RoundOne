@@ -19,6 +19,7 @@ public class MenuModel {
     public MenuModel()
     {
         highScores = new Score[3];
+        loadScores();
     }
     
     public String getName()
