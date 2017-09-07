@@ -7,11 +7,17 @@ package roundone;
 
 /**
  *
- * @author mpk5206
+ * @author nps5120
  */
 class Score {
     private String name;
-    private int points = 0;
+    private String points = "0";
+    
+    public Score(String name, String points)
+    {
+        this.name = name;
+        this.points = points;
+    }
 
     /**
      * @return the name
@@ -30,14 +36,14 @@ class Score {
     /**
      * @return the points
      */
-    public int getPoints() {
+    public String getPoints() {
         return points;
     }
 
     /**
      * @param points the points to set
      */
-    public void setPoints(int points) {
+    public void setPoints(String points) {
         this.points = points;
     }
 }
