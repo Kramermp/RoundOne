@@ -24,17 +24,81 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="52" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+              <Component id="i3Label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="nameLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="nameField" min="-2" pref="112" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="i1Label" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                              <Component id="nameLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="nameField1" min="-2" pref="133" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="startButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lbName1Label" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbName2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbName3Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lbScore3Label" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="lbPts3Label" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="lbScore2Label" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="lbPts2Label" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lbScore1Label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lbPts1Label" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="startButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="i2Label" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="instructionsLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="leaderboardLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -42,36 +106,140 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="94" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="instructionsLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="i1Label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="i2Label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="i3Label" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nameField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="startButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-              <Component id="startButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="leaderboardLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbScore1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbPts1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbName1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbScore2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbPts2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbName2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbName3Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbScore3Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbPts3Label" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="startButton">
+    <Component class="javax.swing.JButton" name="startButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Start Game"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="nameField">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameFieldActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="nameField1">
     </Component>
-    <Component class="javax.swing.JLabel" name="nameLabel">
+    <Component class="javax.swing.JLabel" name="titleLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Munchers"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="nameLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Please enter your nickname here:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="instructionsLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Instructions:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="i1Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="The object of the game is to, out of all of the numbers on screen, select the prime numbers."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="i2Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Earn points by selecting prime numbers, lose points for selecting non-prime numbers."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="i3Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="The game ends when all of the prime numbers have been selected."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="leaderboardLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Leaderboard"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbName1Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AAA"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbPts1Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="pts"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbScore1Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbName2Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AAA"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbPts2Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="pts"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbScore2Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbName3Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AAA"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbPts3Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="pts"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbScore3Label">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
   </SubComponents>
