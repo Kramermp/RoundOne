@@ -7,6 +7,8 @@ package roundone;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -37,9 +39,9 @@ public class MenuModel {
         this.name = name;
     }
     
-    public void addScore(String name, String score)
+    public void addScore(String score)
     {
-        Score newScore = new Score(name, score);
+        Score newScore = new Score(this.name, score);
         
         if(newScore.getPoints().compareTo(highScores[0].getPoints()) > 0)
         {
@@ -68,9 +70,11 @@ public class MenuModel {
             for(int i = 0; i < 3; i++)
             {
                 writer.print(highScores[i].getName() + "\n");
-                writer.print(highScores[i].getPoints() + "\n");
+                writer.print(highScores[i].getPoints() + "\n");           
                 
             }
+            writer.flush();
+            writer.close();
         }
         catch(Exception e)
         {
@@ -94,6 +98,22 @@ public class MenuModel {
         catch(FileNotFoundException e)
         {
             System.out.println("File not found");
+            //Make Files
+            try {
+                PrintWriter out = new PrintWriter("src/roundone/leaderboard.txt");
+                out.println("AAA");
+                out.println("0");
+                out.println("AAA");
+                out.println("0");
+                out.println("AAA");
+                out.println("0");
+                out.flush();
+                out.close();
+            } catch (IOException exception) {
+                System.out.println("IO Exception");
+            }
+            
+
         }
         catch(NullPointerException n)
         {

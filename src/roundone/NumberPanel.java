@@ -16,15 +16,21 @@ import javax.swing.JPanel;
  */
 public class NumberPanel extends JPanel {
         Random rng = new Random();
+        private Color defaultColor = Color.WHITE;
+        private static final Color errorColor = Color.RED;
+        private static final Color selectedColor = Color.BLUE;
+        private static final Color correctColor = Color.GREEN;
         private int number;
         
         
         public NumberPanel(int number) {
-            this.setBackground(new Color(rng.nextInt(255), rng.nextInt(255), rng.nextInt(255)));
+            this.setBackground(defaultColor);
             this.number = number;
             //this.setLayout(new BorderLayout());
             this.add(new JLabel(Integer.toString(this.number)));
-            isPrime();
+            if(isPrime())
+                setBackground(Color.CYAN);
+            
         }
         
         public boolean isPrime() {
@@ -37,5 +43,21 @@ public class NumberPanel extends JPanel {
             System.out.println(number + " is prime.");
             return true;
         }
-    
+        
+        public void setSelected(boolean isSelected) {
+            if(isSelected) {
+                this.setBackground(selectedColor);
+            } else {
+                this.setBackground(defaultColor);
+            }
+        }
+        
+        public void trigger() {
+            if(isPrime()) {
+                defaultColor = correctColor;
+            } else {
+                defaultColor = errorColor;
+            }
+            this.setBackground(defaultColor);
+        }
 }

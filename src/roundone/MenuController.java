@@ -15,11 +15,12 @@ import java.awt.event.ActionListener;
 public class MenuController {
     private MenuView theMenuView;
     private MenuModel theMenuModel;
+    private GameController theGameController;
     
     //Changes were made here that still need to be discussed with the design team
     public MenuController() {
         theMenuView = new MenuView(this);
-        theMenuModel = new MenuModel();
+        theMenuModel = new MenuModel(); //Load
         this.theMenuView.populateLeaderboard(theMenuModel.getHighScores());
         this.theMenuView.setVisible(true);
     }
@@ -46,13 +47,17 @@ public class MenuController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            theMenuModel.setName(theMenuView.getNameField().getText());
-            //TODO initialize game
+            startGame();
         }
         
     }
     
     public void startGame() {
-        new GameController();
+        theMenuModel.setName(theMenuView.getNameField().getText());
+        theGameController = new GameController(this.theMenuModel, this);
+    }
+    
+    public void updateLabels() {
+        theMenuView.populateLeaderboard(theMenuModel.getHighScores());
     }
 }

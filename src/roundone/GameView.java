@@ -28,13 +28,12 @@ public class GameView extends javax.swing.JFrame {
         this.theNumberPanelArray = theNumberPanelArray;
         initComponents();
         buildNumberPanels();
+        this.theNumberPanelArray[0][0].setSelected(true);
         this.addKeyListener(new GameListener(this.parentController));
+        
     }
     
     private void buildNumberPanels() {  
-        int Low = 1;
-        int High = 100;        
-        Random rng = new Random();
         
         GridBagConstraints c = new GridBagConstraints();
         c.fill=GridBagConstraints.BOTH;
@@ -45,8 +44,8 @@ public class GameView extends javax.swing.JFrame {
             for(int j = 0; j < 7; j++) {
                 c.gridx = i;
                 c.gridy = j;
-                NumberPanel selectedNumberPanel = new NumberPanel(rng.nextInt(High - Low) + Low);
-                theNumberPanelArray[i][j] = selectedNumberPanel;
+                NumberPanel selectedNumberPanel;
+                selectedNumberPanel = theNumberPanelArray[i][j];
                 add(selectedNumberPanel, c);
             }
         }
@@ -63,7 +62,7 @@ public class GameView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
