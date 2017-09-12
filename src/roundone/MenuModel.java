@@ -5,6 +5,8 @@
  */
 package roundone;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -14,11 +16,14 @@ import java.util.Scanner;
  */
 public class MenuModel {
     private String name; //This is the current Username
-    private Score[] highScores;
+    private Score[] highScores = new Score[3];
     
     public MenuModel()
     {
-        highScores = new Score[3];
+        for(int i = 0; i < 3; i++)
+        {
+            highScores[i] = new Score("", "");
+        }
         loadScores();
     }
     
@@ -55,42 +60,44 @@ public class MenuModel {
         saveScores();
     }
     
-    private boolean saveScores()
+    private void saveScores()
     {
         try
         {
-            PrintWriter writer = new PrintWriter("leaderboard.txt");
+            PrintWriter writer = new PrintWriter("src/roundone/leaderboard.txt");
             for(int i = 0; i < 3; i++)
             {
                 writer.print(highScores[i].getName() + "\n");
                 writer.print(highScores[i].getPoints() + "\n");
                 
             }
-            return true;
         }
         catch(Exception e)
         {
-            return false;
+            System.out.println("Exception");
         }
     }
     
-    private boolean loadScores()
+    private void loadScores()
     {
         try
         {
-            Scanner fileIn = new Scanner("leaderboard.txt");
-            fileIn.useDelimiter("\n");
-            for(int i = 0; i < 3; i++)
+            File leaderboard = new File("src/roundone/leaderboard.txt");
+            Scanner fileIn = new Scanner(leaderboard);
+            for(Score s: highScores)
             {
-                highScores[i].setName(fileIn.nextLine());
-                highScores[i].setPoints(fileIn.nextLine());
+                s.setName(fileIn.nextLine());
+                s.setPoints(fileIn.nextLine());
             }
-            
-            return true;
+           
         }
-        catch(Exception e)
+        catch(FileNotFoundException e)
         {
-            return false;
+            System.out.println("File not found");
+        }
+        catch(NullPointerException n)
+        {
+            System.out.println("Null pointer exception");
         }
     }
     

@@ -6,6 +6,7 @@
 package roundone;
 
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 /**
  *
@@ -260,7 +261,22 @@ public class MenuView extends JFrame {
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 
-    void populateLeaderboard(Score[] highScores) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void populateLeaderboard(Score[] highScores) {
+        lbName1Label.setText(highScores[0].getName());
+        lbName2Label.setText(highScores[1].getName());
+        lbName3Label.setText(highScores[2].getName());
+        lbScore1Label.setText(highScores[0].getPoints());
+        lbScore2Label.setText(highScores[1].getPoints());
+        lbScore3Label.setText(highScores[2].getPoints());
+    }
+    
+    public JTextField getNameField()
+    {
+        return this.nameField;
+    }
+    
+    public void setNameField(String s)
+    {
+        this.nameField.setText(s);
     }
 }

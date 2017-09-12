@@ -7,7 +7,6 @@ package roundone;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
 
 /**
  *
@@ -38,7 +37,8 @@ public class MenuController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.err.println("This is a stub.");
+            theMenuModel.setName(theMenuView.getNameField().getText());
+            //TODO initialize game
         }
         
     }
