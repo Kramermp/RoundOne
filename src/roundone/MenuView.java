@@ -33,7 +33,7 @@ public class MenuView extends JFrame {
     private void initComponents() {
 
         startButton1 = new javax.swing.JButton();
-        nameField1 = new javax.swing.JTextField();
+        nameField = new javax.swing.JTextField();
         titleLabel = new javax.swing.JLabel();
         nameLabel1 = new javax.swing.JLabel();
         instructionsLabel = new javax.swing.JLabel();
@@ -111,7 +111,7 @@ public class MenuView extends JFrame {
                                 .addGap(9, 9, 9)
                                 .addComponent(nameLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -171,7 +171,7 @@ public class MenuView extends JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel1)
-                    .addComponent(nameField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(startButton1))
                 .addGap(18, 18, 18)
                 .addComponent(leaderboardLabel)
@@ -254,7 +254,7 @@ public class MenuView extends JFrame {
     private javax.swing.JLabel lbScore2Label;
     private javax.swing.JLabel lbScore3Label;
     private javax.swing.JLabel leaderboardLabel;
-    private javax.swing.JTextField nameField1;
+    private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel1;
     private javax.swing.JButton startButton1;
     private javax.swing.JLabel titleLabel;

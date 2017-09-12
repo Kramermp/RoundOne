@@ -38,7 +38,7 @@
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Component id="nameLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="nameField1" min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="nameField" min="-2" pref="133" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -120,7 +120,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nameField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="startButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -157,7 +157,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="nameField1">
+    <Component class="javax.swing.JTextField" name="nameField">
     </Component>
     <Component class="javax.swing.JLabel" name="titleLabel">
       <Properties>
