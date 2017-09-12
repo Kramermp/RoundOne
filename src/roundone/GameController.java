@@ -68,6 +68,7 @@ public class GameController {
         switch(keyCode) {
             case 32: // Space
                 System.out.println("Space Pressed");
+                this.theNumberPanelArray[playerY][playerX].setBackground(Color.gray);
                 return;
             case 37: //Left
                 System.out.println("Left Pressed");
