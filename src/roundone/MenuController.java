@@ -18,7 +18,7 @@ public class MenuController {
     
     //Changes were made here that still need to be discussed with the design team
     public MenuController() {
-        theMenuView = new MenuView();
+        theMenuView = new MenuView(this);
         theMenuModel = new MenuModel();
         this.theMenuView.populateLeaderboard(theMenuModel.getHighScores());
         this.theMenuView.setVisible(true);
