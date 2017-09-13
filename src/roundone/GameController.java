@@ -15,7 +15,7 @@ import java.util.Random;
  * @author zjx5013
  */
 public class GameController {
-    int timeToWait = 15;
+    int timeToWait = 180;
     int playerX = 0;
     int playerY = 0;
     NumberPanel[][] theNumberPanelArray = new NumberPanel[7][7];
@@ -165,8 +165,10 @@ public class GameController {
         System.out.println("Game is finished.");
         theMenuModel.addScore(score);
         theGameView.dispose();
+        new MessageWindow(new Score(theMenuModel.getName(), score));
         if(timerThread.isAlive()) 
             timerThread.interrupt();
+        
         theMenuController.updateScoreboard();
     }
 }

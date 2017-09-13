@@ -52,8 +52,7 @@ public class MenuController {
         @Override
         public void actionPerformed(ActionEvent e) {
             startGame();
-        }
-        
+        } 
     }
     
     public void startGame() {
