@@ -28,6 +28,10 @@ public class MenuController {
     public void setName(String username) {
         theMenuModel.setName(username);
     } 
+
+    void updateScoreboard() {
+       theMenuView.populateLeaderboard(theMenuModel.getHighScores());
+    }
     
     private class ExitListener implements ActionListener {
 
@@ -55,9 +59,5 @@ public class MenuController {
     public void startGame() {
         theMenuModel.setName(theMenuView.getNameField().getText());
         theGameController = new GameController(this.theMenuModel, this);
-    }
-    
-    public void updateLabels() {
-        theMenuView.populateLeaderboard(theMenuModel.getHighScores());
     }
 }

@@ -26,6 +26,7 @@ public class GameController {
     int score;
     String username="";
     MenuModel theMenuModel;
+    MenuController theMenuController;
     GameView theGameView;
     int panelNum;
     
@@ -34,6 +35,7 @@ public class GameController {
     public GameController(MenuModel theMenuModel, MenuController theMenuController){
         this.theMenuModel= theMenuModel;
         populateNumberPanels();
+        this.theMenuController = theMenuController;
         theGameView=new GameView(this, theNumberPanelArray, timeToWait);
         timerThread = new TimerThread(this, timeToWait);
         timerThread.start();
@@ -165,5 +167,6 @@ public class GameController {
         theGameView.dispose();
         if(timerThread.isAlive()) 
             timerThread.interrupt();
+        theMenuController.updateScoreboard();
     }
 }
