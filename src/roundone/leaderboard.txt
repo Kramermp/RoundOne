@@ -1,1 +1,1 @@
-asdf,160,asdf,130,BLANK,0,
+BLANK,200,Faust,180,asdf,160,
