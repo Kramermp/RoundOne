@@ -29,7 +29,7 @@ public class MenuController {
         theMenuModel.setName(username);
     } 
 
-    void updateScoreboard() {
+    public void updateScoreboard() {
        theMenuView.populateLeaderboard(theMenuModel.getHighScores());
     }
     

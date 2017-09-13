@@ -7,11 +7,8 @@ package roundone;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -124,11 +121,6 @@ public class MenuModel {
         {
             System.out.println("Null pointer exception");
         }
-    }
-    
-    public void buildGameFrame(GameView gView, GameModel gModel, GameController gController) 
-    {
-        System.err.println("This is a stub.");
     }
     
     public Score[] getHighScores() {
