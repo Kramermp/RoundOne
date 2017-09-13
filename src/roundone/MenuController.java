@@ -33,17 +33,8 @@ public class MenuController {
        theMenuView.populateLeaderboard(theMenuModel.getHighScores());
     }
     
-    private class ExitListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.err.println("This is a stub.");
-        }
-        
-    }
     
     public void exitGame() {
-        //SaveData
         System.exit(0);
     }
     
