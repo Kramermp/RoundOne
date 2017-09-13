@@ -15,11 +15,13 @@ import java.util.Random;
  * @author zjx5013
  */
 public class GameController {
+    int timeToWait = 15;
     int playerX = 0;
     int playerY = 0;
     NumberPanel[][] theNumberPanelArray = new NumberPanel[7][7];
     int numberOfAnswers = 0;
     int numberOfCorrectResponses = 0;
+    TimerThread timerThread;
             
     int score;
     String username="";
@@ -30,9 +32,11 @@ public class GameController {
     
     
     public GameController(MenuModel theMenuModel, MenuController theMenuController){
-        this.theMenuModel= theMenuModel;  
+        this.theMenuModel= theMenuModel;
         populateNumberPanels();
-        theGameView=new GameView(this, theNumberPanelArray);
+        theGameView=new GameView(this, theNumberPanelArray, timeToWait);
+        timerThread = new TimerThread(this, timeToWait);
+        timerThread.start();
         theGameView.setVisible(true);
         theGameView.requestFocus();
     }
@@ -81,15 +85,14 @@ public class GameController {
                     numberOfCorrectResponses++;
                     //Check If finished
                     if(numberOfCorrectResponses >= numberOfAnswers) {
-                        System.out.println("Game is finished.");
-                        theMenuModel.addScore(Integer.toString(score));
-                        theGameView.dispose();
+                        gameOver();
                     }
                 } else {
                     //DescreaseScore
                     score -= 10;
                 }
                 System.out.println(score);
+                updateScore();
                 return;
             case 37: //Left
                 System.out.println("Left Pressed");
@@ -144,5 +147,23 @@ public class GameController {
         }
     }
     
+    public int getScore() {
+        return this.score;
+    }
     
+    public void updateScore() {
+        theGameView.updateScore(score);
+    }
+    
+    public void updateTimer(int timeLeft) {
+        theGameView.updateTimer(timeLeft);
+    }
+    
+    public void gameOver() {
+        System.out.println("Game is finished.");
+        theMenuModel.addScore(Integer.toString(score));
+        theGameView.dispose();
+        if(timerThread.isAlive()) 
+            timerThread.interrupt();
+    }
 }

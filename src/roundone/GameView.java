@@ -18,19 +18,24 @@ import javax.swing.JPanel;
  * @author zjx5013
  */
 public class GameView extends javax.swing.JFrame {
+    private int timeToWait = 60;
+    private JLabel timerLabel;
     GameController parentController;
     NumberPanel[][] theNumberPanelArray;
+    
+    private JLabel scoreLabel;
     /**
      * Creates new form MainMenuUI
      */
-    public GameView(GameController parentController, NumberPanel[][] theNumberPanelArray) {
+    public GameView(GameController parentController, NumberPanel[][] theNumberPanelArray,
+            int timeToWait) {
         this.parentController = parentController;
         this.theNumberPanelArray = theNumberPanelArray;
+        this.timeToWait = timeToWait;
         initComponents();
         buildNumberPanels();
         this.theNumberPanelArray[0][0].setSelected(true);
         this.addKeyListener(new GameListener(this.parentController));
-        
     }
     
     private void buildNumberPanels() {  
@@ -40,15 +45,39 @@ public class GameView extends javax.swing.JFrame {
         c.weightx=1;
         c.weighty=1;
         setLayout(new GridBagLayout());
+        JPanel topArea = new JPanel();
+        //topArea.setBackground(Color.BLACK);
+        topArea.setLayout(new GridBagLayout());
+        c.anchor = GridBagConstraints.WEST;
+        scoreLabel = new JLabel(parentController.getScore() + " points");
+        topArea.add(scoreLabel, c);
+        c.anchor = GridBagConstraints.CENTER;
+        c.gridx = 1;
+        timerLabel = new JLabel(Integer.toString(timeToWait));
+        timerLabel.setHorizontalAlignment(JLabel.RIGHT);
+        topArea.add(timerLabel, c);
+        topArea.setBackground(Color.yellow);
+        c.gridwidth = 7;
+        c.gridx = 0;
+        add(topArea, c);
+        c.gridwidth = 1;
         for(int i =0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
                 c.gridx = i;
-                c.gridy = j;
+                c.gridy = j + 1;
                 NumberPanel selectedNumberPanel;
                 selectedNumberPanel = theNumberPanelArray[i][j];
                 add(selectedNumberPanel, c);
             }
         }
+    }
+    
+    void updateScore(int newScore) {
+        scoreLabel.setText(newScore + " points.");
+    }
+    
+    void updateTimer(int newTimer) {
+        timerLabel.setText(Integer.toString(newTimer));
     }
    
     
