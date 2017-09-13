@@ -11,12 +11,14 @@ package roundone;
  */
 class Score {
     private String name;
-    private String points = "0";
+    private int points = 0;
     
-    public Score(String name, String points)
+    public Score(String name, int points)
     {
         this.name = name;
         this.points = points;
+        if(this.name.isEmpty())
+            this.name = "BLANK";
     }
 
     /**
@@ -36,14 +38,14 @@ class Score {
     /**
      * @return the points
      */
-    public String getPoints() {
+    public int getPoints() {
         return points;
     }
 
     /**
      * @param points the points to set
      */
-    public void setPoints(String points) {
+    public void setPoints(int points) {
         this.points = points;
     }
 }

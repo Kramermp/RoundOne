@@ -220,9 +220,9 @@ public class MenuView extends JFrame {
         lbName1Label.setText(highScores[0].getName());
         lbName2Label.setText(highScores[1].getName());
         lbName3Label.setText(highScores[2].getName());
-        lbScore1Label.setText(highScores[0].getPoints());
-        lbScore2Label.setText(highScores[1].getPoints());
-        lbScore3Label.setText(highScores[2].getPoints());
+        lbScore1Label.setText(Integer.toString(highScores[0].getPoints()));
+        lbScore2Label.setText(Integer.toString(highScores[1].getPoints()));
+        lbScore3Label.setText(Integer.toString(highScores[2].getPoints()));
     }
     
     public JTextField getNameField()

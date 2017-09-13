@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -24,7 +26,7 @@ public class MenuModel {
     {
         for(int i = 0; i < 3; i++)
         {
-            highScores[i] = new Score("", "");
+            highScores[i] = new Score("", 0);
         }
         loadScores();
     }
@@ -39,22 +41,22 @@ public class MenuModel {
         this.name = name;
     }
     
-    public void addScore(String score)
+    public void addScore(int score)
     {
         Score newScore = new Score(this.name, score);
         
-        if(newScore.getPoints().compareTo(highScores[0].getPoints()) > 0)
+        if(newScore.getPoints() > highScores[0].getPoints())
         {
             highScores[2] = highScores[1];
             highScores[1] = highScores[0];
             highScores[0] = newScore;
         }
-        else if(newScore.getPoints().compareTo(highScores[1].getPoints()) > 0)
+        else if(newScore.getPoints() > (highScores[1].getPoints()))
         {
             highScores[2] = highScores[1];
             highScores[1] = newScore;
         }
-        else if(newScore.getPoints().compareTo(highScores[2].getPoints()) > 0)
+        else if(newScore.getPoints() > highScores[2].getPoints())
         {
             highScores[2] = newScore;
         }
@@ -66,12 +68,12 @@ public class MenuModel {
     {
         try
         {
+            File file = new File("src/roundone/leaderboard.txt");
+            file.delete();
             PrintWriter writer = new PrintWriter("src/roundone/leaderboard.txt");
             for(int i = 0; i < 3; i++)
             {
-                writer.print(highScores[i].getName() + "\n");
-                writer.print(highScores[i].getPoints() + "\n");           
-                
+                writer.print(highScores[i].getName() + "," + highScores[i].getPoints() + ",");      
             }
             writer.flush();
             writer.close();
@@ -88,10 +90,13 @@ public class MenuModel {
         {
             File leaderboard = new File("src/roundone/leaderboard.txt");
             Scanner fileIn = new Scanner(leaderboard);
+            fileIn.useDelimiter(",");
             for(Score s: highScores)
             {
-                s.setName(fileIn.nextLine());
-                s.setPoints(fileIn.nextLine());
+                String name = fileIn.next();
+                System.out.println(name);
+                s.setName(name);
+                s.setPoints(fileIn.nextInt());
             }
            
         }

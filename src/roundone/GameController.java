@@ -161,7 +161,7 @@ public class GameController {
     
     public void gameOver() {
         System.out.println("Game is finished.");
-        theMenuModel.addScore(Integer.toString(score));
+        theMenuModel.addScore(score);
         theGameView.dispose();
         if(timerThread.isAlive()) 
             timerThread.interrupt();
