@@ -28,8 +28,8 @@ public class NumberPanel extends JPanel {
             this.number = number;
             //this.setLayout(new BorderLayout());
             this.add(new JLabel(Integer.toString(this.number)));
-            if(isPrime())
-                setBackground(Color.CYAN);
+            /*if(isPrime())
+                setBackground(Color.CYAN);*/
             
         }
         
